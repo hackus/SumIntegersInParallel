@@ -1,4 +1,4 @@
-# SumIntegersInParallel
+# Sum integers in parallel
 
 This project calculates sum of all integers contained in a given value in parallel using threads. 
 
