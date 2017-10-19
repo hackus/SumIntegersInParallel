@@ -1,8 +1,4 @@
-package com.learn;
-
-import com.learn.queues.MyQueues;
-
-import java.util.concurrent.atomic.AtomicLong;
+package com.attempt1;
 
 /**
  * Created by hackus on 10/10/17.

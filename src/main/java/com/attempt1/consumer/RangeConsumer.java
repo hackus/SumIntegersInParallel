@@ -1,9 +1,9 @@
-package com.learn.consumer;
+package com.attempt1.consumer;
 
-import com.learn.SystemParams;
-import com.learn.producer.PartialSumProducer;
-import com.learn.queues.MyQueues;
-import com.learn.queues.RangeContainer;
+import com.attempt1.SystemParams;
+import com.attempt1.producer.PartialSumProducer;
+import com.attempt1.queues.MyQueues;
+import com.attempt1.queues.RangeContainer;
 
 /**
  * Created by hackus on 10/10/17.

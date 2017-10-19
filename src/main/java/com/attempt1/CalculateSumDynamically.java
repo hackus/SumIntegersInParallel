@@ -1,8 +1,8 @@
-package com.learn;
+package com.attempt1;
 
-import com.learn.consumer.RangeConsumer;
-import com.learn.consumer.PartialResultConsumer;
-import com.learn.producer.RangeProducer;
+import com.attempt1.consumer.RangeConsumer;
+import com.attempt1.consumer.PartialResultConsumer;
+import com.attempt1.producer.RangeProducer;
 
 /**
  * Created by hackus on 10/10/17.

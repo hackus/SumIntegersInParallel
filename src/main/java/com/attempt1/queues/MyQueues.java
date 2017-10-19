@@ -1,4 +1,4 @@
-package com.learn.queues;
+package com.attempt1.queues;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;

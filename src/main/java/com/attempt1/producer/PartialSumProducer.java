@@ -1,7 +1,7 @@
-package com.learn.producer;
+package com.attempt1.producer;
 
-import com.learn.queues.MyQueues;
-import com.learn.queues.RangeContainer;
+import com.attempt1.queues.MyQueues;
+import com.attempt1.queues.RangeContainer;
 
 /**
  * Created by hackus on 10/10/17.

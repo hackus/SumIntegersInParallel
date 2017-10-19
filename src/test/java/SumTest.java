@@ -1,5 +1,7 @@
-import com.learn.CalculateSumWithPredefinedThreads;
-import com.learn.CalculateSumDynamically;
+import com.attempt1.CalculateSumWithPredefinedThreads;
+import com.attempt1.CalculateSumDynamically;
+import com.attempt2.SessionParams;
+import com.attempt2.SumUsingFutures;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -9,10 +11,10 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by hackus on 10/11/17.
  */
-public class CalculateSumTest {
+public class SumTest {
 
     int n = 100_000_000;
-    long[] arrayOfLong = getArray(n);
+    long[] arrayOfLong = TestUtils.getArray(n);
 
     @Test
     public void testCalculateSumDynamically(){
@@ -24,12 +26,12 @@ public class CalculateSumTest {
         System.out.println("parallel duration is:   " + (end - start)/1000);
 
         start = System.nanoTime();
-        long sequential = calculateSumSequentially(arrayOfLong);
+        long sequential = TestUtils.calculateSumSequentially(arrayOfLong);
         end = System.nanoTime();
         System.out.println("sequential duration is: " + (end - start)/1000);
 
         System.out.println("sequential is: " + sequential);
-        System.out.println("parallel is: " + parallel);
+        System.out.println("parallel is:   " + parallel);
 
         assertTrue(sequential == parallel);
     }
@@ -65,27 +67,30 @@ public class CalculateSumTest {
         System.out.println("sequential duration is: " + (end - start)/1000);
 
         System.out.println("sequential is: " + sequential[0]);
-        System.out.println("parallel is: " + parallel);
+        System.out.println("parallel is:   " + parallel);
 
         assertTrue(sequential[0] == parallel);
     }
 
+    @Test
+    public void calculateSumUsinFuture(){
+        SumUsingFutures calculatedSum = new SumUsingFutures(10_000_000);
+        SessionParams.setArray(arrayOfLong);
 
+        long start = System.nanoTime();
+        long parallel = calculatedSum.parallelSum(arrayOfLong.length);
+        long end = System.nanoTime();
+        System.out.println("parallel duration is:   " + (end - start)/1000);
 
-    public long calculateSumSequentially(long [] arrayOfLong){
-        long sum = 0;
-        for(int i=0;i<arrayOfLong.length;i++){
-            sum+=arrayOfLong[i];
-        }
-        return sum;
-    }
+        start = System.nanoTime();
+        long sequential = TestUtils.calculateSumSequentially(arrayOfLong);
+        end = System.nanoTime();
+        System.out.println("sequential duration is: " + (end - start)/1000);
 
-    private long[] getArray(int length){
-        long [] arrayOfLong = new long[length];
-        for(int i=0;i<length;i++){
-            arrayOfLong[i] = i;
-        }
-        return arrayOfLong;
+        System.out.println("sequential is: " + sequential);
+        System.out.println("parallel is:   " + parallel);
+
+        assertTrue(sequential == parallel);
     }
 
 //    @Test
@@ -97,20 +102,10 @@ public class CalculateSumTest {
         }
         assertTrue(sum == 15);
 
-        sum = sumArray(getRange(array, 0, 2));
-        sum += sumArray(getRange(array, 2, array.length));
+        sum = TestUtils.sumArray(TestUtils.getRange(array, 0, 2));
+        sum += TestUtils.sumArray(TestUtils.getRange(array, 2, array.length));
         assertTrue(sum == 15);
     }
 
-    public int sumArray(int[] array){
-        int sum = 0;
-        for(int i=0;i<array.length;i++){
-            sum+=array[i];
-        }
-        return sum;
-    }
 
-    public int [] getRange(int [] array, int start, int end){
-        return Arrays.copyOfRange(array, start, end);
-    }
 }

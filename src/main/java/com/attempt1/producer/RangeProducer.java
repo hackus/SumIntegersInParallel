@@ -1,10 +1,8 @@
-package com.learn.producer;
+package com.attempt1.producer;
 
-import com.learn.SystemParams;
-import com.learn.queues.MyQueues;
-import com.learn.queues.RangeContainer;
-
-import java.util.Arrays;
+import com.attempt1.SystemParams;
+import com.attempt1.queues.MyQueues;
+import com.attempt1.queues.RangeContainer;
 
 /**
  * Created by hackus on 10/10/17.

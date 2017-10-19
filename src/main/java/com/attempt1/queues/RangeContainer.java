@@ -1,4 +1,4 @@
-package com.learn.queues;
+package com.attempt1.queues;
 
 /**
  * Created by hackus on 10/11/17.
